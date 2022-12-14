@@ -9,9 +9,15 @@ class Location(models.Model):
 
 
 class Item(models.Model):
-    name = models.CharField(max_length=150)
-    date_added = models.DateField(auto_now_add=True)
+    trade_code = models.CharField(max_length=150)
+    date = models.DateField(default=None)
+    high = models.FloatField(default=None)
+    low = models.FloatField(default=None)
+    open = models.FloatField(default=None)
+    close = models.FloatField(default=None)
+    volume = models.FloatField(default=None)
+
     
 
     def __str__(self):
-        return self.name
+        return self.trade_code
