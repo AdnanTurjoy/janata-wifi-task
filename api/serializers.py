@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Location, Item
+from .models import  Item
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -8,7 +8,18 @@ class ItemSerializer(serializers.ModelSerializer):
         fields = ('__all__')
 
 
-class LocationSerializer(serializers.ModelSerializer):
+# class LocationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Location
+#         fields = ('__all__')
+
+
+
+class FileUploadSerializer(serializers.Serializer):
+    file = serializers.FileField()
+    
+class SaveFileSerializer(serializers.Serializer):
+    
     class Meta:
-        model = Location
-        fields = ('__all__')
+        model = Item
+        fields = "__all__"

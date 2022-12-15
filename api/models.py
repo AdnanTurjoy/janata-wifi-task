@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class Location(models.Model):
-    name = models.CharField(unique=True, max_length=100)
+# class Location(models.Model):
+#     name = models.CharField(unique=True, max_length=100)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Item(models.Model):
@@ -15,7 +15,7 @@ class Item(models.Model):
     low = models.FloatField(default=None)
     open = models.FloatField(default=None)
     close = models.FloatField(default=None)
-    volume = models.FloatField(default=None)
+    volume = models.CharField(max_length=150)
 
     
 

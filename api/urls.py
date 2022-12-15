@@ -1,9 +1,13 @@
 from django.urls import path
-from .views import ItemList, ItemDetail, LocationDetail, LocationList
+from . import views
+from .views import ItemList,itemCreate,itemUpdate,itemDelete, ItemDetail,UploadFileView
 
 urlpatterns = [
-    path('location/', LocationList.as_view()),
-    path('location/<int:pk>/', LocationDetail.as_view()),
+   
     path('item/', ItemList.as_view()),
     path('item/<int:pk>/', ItemDetail.as_view()),
+    path('item-create/', views.itemCreate),
+    path('item-update/<int:pk>/', views.itemUpdate,),
+    path('item-delete/<int:pk>/', views.itemDelete,),
+    path('upload/', UploadFileView.as_view())
 ]
